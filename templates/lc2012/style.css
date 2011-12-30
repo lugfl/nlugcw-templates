@@ -57,13 +57,12 @@ body
 
 #content
 {
-  height: 550px;
+  min-height: 550px;
   width:797px;
   padding-left:10px;
   padding-top:20px;
   padding-right:10px;
   margin-top: 5px;
-  overflow:auto;
   color: block;
   font-size:12px;
   border: 1px solid #deb36e;
