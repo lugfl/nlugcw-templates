@@ -72,7 +72,8 @@
 				{if isset($events_list)}
 				{foreach $events_list as $event}
 					<div{if isset($event.parent)} class="content-indent1"{/if}>
-						<input id="events[]" name="events[]" type="checkbox" value="{$event.eventid}" /> {$event.name|default:''} {if isset($event.charge)} ({$event.charge|string_format:'%.2f'} &euro;){/if}
+						<input id="events[]" name="events[]" type="checkbox" value="{$event.eventid}" {if $event.quota <= $event.curregistrations}disabled="disabled"{/if}/> {$event.name|default:''} {if isset($event.charge)} ({$event.charge|string_format:'%.2f'} &euro;){/if}
+						{if $event.quota <= $event.curregistrations}(ACHTUNG: Veranstaltung ausgebucht!!!){/if}
 						{if isset($event.beschreibung)}
 						<div class="content-indent1">{$event.beschreibung|default:''}</div>
 						{/if}
