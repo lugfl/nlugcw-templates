@@ -1,0 +1,83 @@
+{* Smarty *}
+
+<h1>Login</h1>
+
+<div id="authbox">
+
+	{if $auth_ok}
+		<p>Sie sind bereits angemeldet.</p>
+		<p>Hier k&ouml;nnen Sie sich <a href="?p={$loginpage}&logout=1">abmelden</a>.</p>
+	{else}
+		{if !isset($login_block)}
+<p class="error">
+Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden Sie sich an den Webmaster.
+</p>
+
+		{elseif $login_block eq 'newpw'}
+			<form method="POST" action="{$SCRIPT_NAME}">
+			<input type="hidden" name="p" value="{$loginpage}"/>
+			<input type="hidden" name="newpw" value="2" />
+			<dl>
+			    <dt>Benutzername:</dt>
+			    <dd><input type="text" name="user" value="" /></dd>
+			    <dt>E-Mail Adresse:</dt>
+			    <dd><input type="text" name="email" value="" /></dd>
+			</dl>
+			<input type="submit" value="OK" />
+			</form>
+
+		{elseif $login_block eq 'newform'}
+		
+			<form method="POST" action="{$SCRIPT_NAME}">
+			<input type="hidden" name="p" value="{$loginpage}"/>
+			<input type="hidden" name="m" value="new" />
+			<dl>
+
+				<dt><label for-id="anmeldung_form_nickname">Account-/Nickname*</label></dt>
+				<dd><input id="anmeldung_form_nickname" type="text" name="auth_user" value="{$auth_user|default:''}" />
+					{if isset($err_auth_user)}<p class="error">{$err_auth_user}</p>{/if}
+				</dd>
+
+				<dt><label for-id="anmeldung_form_passwort">Accountpasswort*</label></dt>
+				<dd><input id="anmeldung_form_passwort" type="password" name="auth_pass" size="15" value="" /></dd>
+
+				<dt><label for-id="anmeldung_form_passwort2">Passwort wiederholen*</label></dt>
+				<dd><input id="anmeldung_form_passwort2" type="password" name="auth_pass2" size="15" value="" />
+					{if isset($err_auth_pass)}<p class="error">{$err_auth_pass}</p>{/if}
+				</dd>
+
+				<dt><label for-id="anmeldung_form_email">E-Mail*</label></dt>
+				<dd><input id="anmeldung_form_email" type="text" name="auth_email" size="30" value="{$auth_email|default:''}" />
+					{if isset($err_auth_email)}<p class="error">{$err_auth_email}</p>{/if}
+				</dd>
+			</dl>
+			<input type="submit" value="Registrieren" />
+			</form>
+		{elseif $login_block eq 'confirmmailsend'}
+		<p>
+			Der Account wurde angelegt. Du bekommst in K&uuml;rze eine EMail mit einem Best&auml;tigungslink.
+			Dein Zugang zu dieser Seite funktioniert erst, wenn Du den Best&auml;tigungslink einmal angeklickt hast.
+		</p>
+		{elseif $login_block eq 'confirmed'}
+		<p>
+			Ihre Accountbest&auml;titung wurde durchgef&uuml;rt. Sie k&ouml;nnen sich jetzt anmelden.
+		</p>
+		{else}
+				<form action="{$SCRIPT_NAME}?" method="post">
+					<input type="hidden" name="p" value="{$loginpage}"/>
+					<input type="hidden" name="m" value="login" />
+					<dl>
+						<dt><label for-id="auth_form_user">Benutzername:</label></dt>
+						<dd><input id="auth_form_user" type="text" name="auth_user"/></dd>
+						
+						<dt><label for-id="auth_form_pass">Passwort:</label></dt>
+						<dd><input id="auth_form_pass" type="password" name="auth_pass"/></dd>
+					</dl>
+					<input type="submit" value="Login"/>
+					<p><a href="?p={$loginpage}&m=newpw">Passwort vergessen?</a></p>
+					<p><a href="?p={$loginpage}&m=newform">Neuen Account anlegen?</a></p>
+				</form>
+		{/if}
+	{/if}
+
+</div>
