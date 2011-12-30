@@ -1,6 +1,6 @@
 {* Navigation generator *}
 {assign var=SUBNAVI value=""}
-<div id="nav">
+{* <div id="nav"> *}
 <div id="haupt-navi">
 	<ul>
 	{foreach from=$NAVI item=itm}
@@ -27,7 +27,7 @@
 	{/if}
 </div>
 
-{if $role_admin}
+{if $role_admin_sry_but_i_hate_hard_coded_database_ids}
     <div id="admin-nav">
 		{* Pagetype dependant navigation items.. *}
 		{if $pagetypeid == 1} {* Text/HTML *}
@@ -42,4 +42,4 @@
     </div>
 {/if}
 
-</div>
+{* </div> *}

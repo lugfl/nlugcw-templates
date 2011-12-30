@@ -3,21 +3,19 @@
 <div id="page">
 	{include file="./banner.tpl"}
 
-	{include file="./navigation.tpl"}
-
-{if $role_admin}
-	<div id="admin-nav">
-		<ul>
-			<li><a href="javascript:news_create_show();">[News schreiben]</a></li>
-		</ul>
-		{* Include the page editor here when we are in admin role.. The editor template takes care itself if it is in editmode or not.. *}
+	<div id="nav">
+		{include file="./navigation.tpl"}
+		{if $role_admin}
+			<div id="admin-nav">
+				<ul>
+					<li><a href="javascript:news_create_show();">[News schreiben]</a></li>
+				</ul>
+			</div>
 		{include file="../page_editor.tpl"}
+		{/if}
 	</div>
-{/if}
 
-	<div id="content">
-		<div id="sponsoren">{$SPONSOREN}</div>
-
+	<div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
 		{foreach $NEWSLISTE as $NEWS}
 		{strip}
 		<div id="news_eintrag">
@@ -31,6 +29,10 @@
 		{/strip}
 		{/foreach}
 	</div>
+
+	{if $SPONSOREN}
+	<div id="sponsoren">{$SPONSOREN}</div>
+	{/if}
 </div>
 {include file="./footer.tpl"}
 

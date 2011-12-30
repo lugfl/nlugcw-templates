@@ -1,16 +1,33 @@
 {include file="./header.tpl"}
 
-  <div id="page">
-		{include file="./banner.tpl"}
+<div id="page">
+	{include file="./banner.tpl"}
 
+	<div id="nav">
 		{include file="./navigation.tpl"}
 
-    <div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
+		{if $role_admin}
+		    <div id="admin-nav">
+				{* Pagetype dependant navigation items.. *}
+					<ul>
+						<li><a href="javascript:editor_show();">[Seite bearbeiten]</a></li>
+						<li><a href="javascript:page_create_show();">[Seite erstellen]</a></li>
+						<li><a href="javascript:page_delete_show();">[Seite löschen]</a></li>
+					</ul>
+
+				{* Include the page editor here when we are in admin role.. The editor template takes care itself if it is in editmode or not.. *}
+				{include file="../page_editor.tpl"}
+		    </div>
+		{/if}
+	</div>
+
+	<div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
 		{$CONTENT}
-    </div>
-    {if $SPONSOREN}
-    <div id="sponsoren">{$SPONSOREN}</div>
-    {/if}
-  </div>
+	</div>
+
+	{if $SPONSOREN}
+	<div id="sponsoren">{$SPONSOREN}</div>
+	{/if}
+</div>
 
 {include file="./footer.tpl"}
