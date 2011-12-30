@@ -16,8 +16,6 @@ body
 
 #banner
 {
-  position:absolute;
-  top:0px;
   /* background-color:#3d5b99; */
   margin: 0px;
   padding:0px;
@@ -27,7 +25,6 @@ body
 
 #sponsoren
 {
-  position:absolute;
   right:20px;
   top:0px;
   background-color:#DEDEDD;
@@ -39,7 +36,6 @@ body
 
 #haupt-navi
 {
-  position:absolute;
   max-width:817px;
 
   top:190px;
@@ -58,9 +54,6 @@ body
 
 #sub-navi
 {
-  position:absolute;
- 
-  top:210px;
   width:inherit;
   margin:0px auto;
   padding-top:0px;
@@ -74,8 +67,6 @@ body
 
 #content
 {
-  position:absolute;
-  top:230px;
   height: 550px;
   width:797px;
  
@@ -94,8 +85,6 @@ body
 
 .debug
 {
-  position: absolute;
-	top: 600px;
 	border-style:thin;
 	border-color:black;
 }
