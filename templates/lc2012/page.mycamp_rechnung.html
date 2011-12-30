@@ -1,0 +1,23 @@
+{include file="./header.tpl"}
+
+<div id="page">
+	{include file="./banner.tpl"}
+
+	<div id="nav">
+		{include file="./navigation.tpl"}
+	</div>
+
+	<div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
+	{if $rechnung_block eq 'overview'}
+		{include file="./block.mycamp_rechnung_overview.tpl"}
+	{elseif $rechnung_block eq 'anmeldung'}
+		{include file="./block.mycamp_rechnung_anmeldung.tpl"}
+	{/if}
+	</div>
+
+	{if $SPONSOREN}
+	<div id="sponsoren">{$SPONSOREN}</div>
+	{/if}
+</div>
+
+{include file="./footer.tpl"}
