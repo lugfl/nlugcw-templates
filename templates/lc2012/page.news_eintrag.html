@@ -1,0 +1,41 @@
+{include file="./header.tpl"}
+
+  <div id="page">
+		{include file="./banner.tpl"}
+    <div id="haupt-navi">
+			{$NAVI}
+    </div>
+    <div id="sub-navi">
+			{$SUBNAVI}
+    </div>
+    <div id="content">
+    	<div id="sponsoren">{$SPONSOREN}</div>
+
+	<div id="news_eintrag">
+		<h2>{$NEWS.TITLE}</h2>
+		<p>{$NEWS.TXT}</p>
+		<p class="small">Geschrieben am {$NEWS.DATE} von {$NEWS.AUTHOR}</p>
+	</div>
+
+{if $ENABLE_EDITOR}
+TODO!
+<script type="text/javascript" src="lib/javascript/editor.js"></script>
+<a href="javascript:editor_show();">[Seite bearbeiten]</a>
+<div id="content_editor" style="position:absolute; z-index: 99; left: -10000px; top: -10000px;">
+	<form method="POST">
+		<textarea id="codeeditor" name="codeeditor" rows="30" cols="50" style="width: 900px">
+		{$CONTENT_RAW}
+		</textarea>
+		<span class="editor_buttons">
+			<button onclick="editor_save();">save</button>
+			<button onclick="editor_discard();">discard</button>
+		</span>
+	</form>
+</div>
+{/if}
+
+    </div>
+  </div>
+{include file="./footer.tpl"}
+
+
