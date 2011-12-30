@@ -79,6 +79,31 @@ body
   font-size:12px;
 }
 
+#admin-nav
+{
+  margin: 5px 0 3px 0;
+}
+
+#admin-nav ul
+{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#admin-nav li
+{
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+
+#admin-nav li a
+{
+  color: #685e9c;
+  text-weight: bolder;
+}
+
 .content-indent1 {
 	margin-left:25px;
 }
