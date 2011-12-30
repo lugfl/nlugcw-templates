@@ -89,6 +89,14 @@
 				<dd><input id="vegetarier" type="checkbox" name="vegetarier" value="1" {if isset($vegetarier) and $vegetarier eq 1} checked="checked"{/if} />Ich bin Vegetarier
 				</dd>
 
+				<dt><label for-id="anreise">Anreise</label></dt>
+				<dd>
+						{foreach $anreise_list as $a}
+						<input type="radio" name="anreise" value="{$a.anreiseid}" {if isset($anreise) and $anreise eq $a.anreiseid}checked="checked"{/if}>{$a.name} </br/>
+						{/foreach}
+					</select>
+					{if isset($err_anreise)} <p class="error">{$err_anreise}</p> {/if}
+				</dd>
 			</dl>
 			<h3>Bemerkung</h3>
 			<p>Hast Du noch eine Bemerkung zur Anmeldung? Kein Problem...</p>
