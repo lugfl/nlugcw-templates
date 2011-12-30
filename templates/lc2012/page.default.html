@@ -5,10 +5,12 @@
 
 		{include file="./navigation.tpl"}
 
-    <div id="content">
-    	<div id="sponsoren">{$SPONSOREN}</div>
-			{$CONTENT}
+    <div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
+		{$CONTENT}
     </div>
+    {if $SPONSOREN}
+    <div id="sponsoren">{$SPONSOREN}</div>
+    {/if}
   </div>
 
 {include file="./footer.tpl"}

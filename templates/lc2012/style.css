@@ -17,17 +17,18 @@ body
 {
   margin: 0px;
   padding:0px;
-  border-style: 1px solid #deb36e;
 }
 
 #sponsoren
 {
-  right:20px;
-  top:0px;
-  margin: 0px;
-  padding:0px; 
-  z-index:2;
+  margin: 5px 0 0 0;
+  padding: 5px; 
   font-size: 8px;
+  display: inline-block;
+  float: right;
+  width: 150px;
+  min-height: 550px;
+  border: 1px solid #685e9c;
 }
 
 #nav ul
@@ -50,7 +51,7 @@ body
   max-width:817px;
   margin:0px auto;
   padding:0px;
-  color:black; /* fuer Trennzeichen wichtig */
+  color:black;
   font-size:15px;
 }
 
@@ -58,10 +59,7 @@ body
 {
   width:inherit;
   margin:0px auto;
-  padding-top:0px;
-  padding-bottom:0px;
-  padding-left:0px;
-  padding-right:0px;
+  padding: 0px;
   color:black;
   font-size:10px;
 }
@@ -79,6 +77,7 @@ body
 
 #content
 {
+  display: inline-block;
   min-height: 550px;
   width:797px;
   padding-left:10px;
@@ -88,6 +87,10 @@ body
   color: block;
   font-size:12px;
   border: 1px solid #deb36e;
+}
+#content.with_sponsor
+{
+  width:627px;
 }
 
 .content-indent1 {
