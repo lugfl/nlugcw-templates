@@ -2,26 +2,9 @@
 
   <div id="page">
 		{include file="./banner.tpl"}
-    <div id="haupt-navi">
-			{$NAVI}
-    </div>
-    <div id="sub-navi">
-			{$SUBNAVI}
-    </div>
-{if $role_admin}
-    <div id="admin-nav">
-		{* Pagetype dependant navigation items.. *}
-		{if $pagetypeid == 1} {* Text/HTML *}
-			<ul>
-				<li><a href="javascript:editor_show();">[Seite bearbeiten]</a></li>
-				<li><a href="javascript:page_create_show();">[Seite erstellen]</a></li>
-				<li><a href="javascript:page_delete_show();">[Seite löschen]</a></li>
-			</ul>
-		{/if}
-		{* Include the page editor here when we are in admin role.. The editor template takes care itself if it is in editmode or not.. *}
-		{include file="../page_editor.tpl"}
-    </div>
-{/if}
+
+		{include file="./navigation.tpl"}
+
     <div id="content">
     	<div id="sponsoren">{$SPONSOREN}</div>
 			{$CONTENT}

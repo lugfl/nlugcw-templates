@@ -30,15 +30,26 @@ body
   font-size: 8px;
 }
 
+#nav ul
+{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#nav li
+{
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+
+
 #haupt-navi
 {
   max-width:817px;
-  top:190px;
   margin:0px auto;
-  padding-top:0px;
-  padding-bottom:0px;
-  padding-left:0px;
-  padding-right:0px;
+  padding:0px;
   color:black; /* fuer Trennzeichen wichtig */
   font-size:15px;
 }
@@ -55,6 +66,17 @@ body
   font-size:10px;
 }
 
+#admin-nav
+{
+  margin: 5px 0 3px 0;
+}
+
+#admin-nav li a
+{
+  color: #685e9c;
+  text-weight: bolder;
+}
+
 #content
 {
   min-height: 550px;
@@ -66,31 +88,6 @@ body
   color: block;
   font-size:12px;
   border: 1px solid #deb36e;
-}
-
-#admin-nav
-{
-  margin: 5px 0 3px 0;
-}
-
-#admin-nav ul
-{
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-#admin-nav li
-{
-  display: inline-block;
-  margin: 0px;
-  padding: 0px;
-}
-
-#admin-nav li a
-{
-  color: #685e9c;
-  text-weight: bolder;
 }
 
 .content-indent1 {
