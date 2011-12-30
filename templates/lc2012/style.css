@@ -1,33 +1,29 @@
 body
 {
- font-family:Verdana;
- font-size:12px;
-  background-color:#deb36e;
+  font-family:Verdana;
+  font-size:12px;
+  background-color: white;
 }
 
 
 #page
 {
   margin: 0px auto;
-  padding:0px;
+  padding: 0px;
   width:818px;
-
 }
 
 #banner
 {
-  /* background-color:#3d5b99; */
   margin: 0px;
   padding:0px;
-	border-style:none;
-  
+  border-style: 1px solid #deb36e;
 }
 
 #sponsoren
 {
   right:20px;
   top:0px;
-  background-color:#DEDEDD;
   margin: 0px;
   padding:0px; 
   z-index:2;
@@ -37,20 +33,15 @@ body
 #haupt-navi
 {
   max-width:817px;
-
   top:190px;
   margin:0px auto;
   padding-top:0px;
   padding-bottom:0px;
   padding-left:0px;
   padding-right:0px;
-  /* background-color:#3d5b99;
-  color:#c0c0c0; */
   color:black; /* fuer Trennzeichen wichtig */
   font-size:15px;
 }
-
-
 
 #sub-navi
 {
@@ -60,7 +51,6 @@ body
   padding-bottom:0px;
   padding-left:0px;
   padding-right:0px;
-  /* background-color:#3d5b99; */
   color:black;
   font-size:10px;
 }
@@ -69,14 +59,14 @@ body
 {
   height: 550px;
   width:797px;
- 
-  background-color:#DEDEDD;
   padding-left:10px;
   padding-top:20px;
   padding-right:10px;
+  margin-top: 5px;
   overflow:auto;
-  color:#2f4778;
+  color: block;
   font-size:12px;
+  border: 1px solid #deb36e;
 }
 
 #admin-nav
@@ -110,19 +100,19 @@ body
 
 .debug
 {
-	border-style:thin;
-	border-color:black;
+  border-style:thin;
+  border-color:black;
 }
 
 a:link {color:black;text-decoration:none;padding-right:10px;padding-left:10px;}
 a:visited {color:black;text-decoration:none;padding-right:10px;padding-left:10px;}
-a:hover {color:#ffffff;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
-a:active {color:#ffffff;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
+a:hover {color:#deb46c;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
+a:active {color:#deb46c;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
 
-a.akktiv:link {color:#ffffff;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
-a.akktiv:visited {color:#ffffff;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
-a.akktiv:hover {color:#ffffff;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
-a.akktiv:active {color:#ffffff;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
+a.akktiv:link {color:#deb36e;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
+a.akktiv:visited {color:#deb36e;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
+a.akktiv:hover {color:#deb46c;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
+a.akktiv:active {color:#deb46c;text-decoration:underline overline;padding-right:10px;padding-left:10px;}
 
 #content img {border-style:solid;border-width:1px;border-color:black;}
 #sponsoren img {border-style:none;border-width:0;border-color:black;}
