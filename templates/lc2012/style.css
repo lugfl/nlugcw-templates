@@ -28,7 +28,7 @@ body
   float: right;
   width: 150px;
   min-height: 550px;
-  border: 1px solid #685e9c;
+  border: 1px solid #deb36e;
 }
 
 #nav ul
@@ -206,4 +206,22 @@ border-top-width: 1px;
 .bold
 {
 font-weight:bold;
+}
+
+h1
+{
+	font-size: 16pt;
+	color: #483e7c;
+}
+
+h2
+{
+	font-size: 13pt;
+	color: #685e9c;
+}
+
+h3
+{
+	font-size: 12pt;
+	color: #685e9c;
 }
