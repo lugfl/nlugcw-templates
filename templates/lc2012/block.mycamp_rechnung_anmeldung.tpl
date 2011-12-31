@@ -1,3 +1,4 @@
+{if isset($ANMELDUNG)}
 <h2>Anmeldedaten</h2>
 <table>
 <tr>
@@ -30,7 +31,9 @@
 	<th>Bemerkung</th><td>{$ANMELDUNG.bemerkung}</td>
 </tr>
 </table>
+{/if}
 
+{if isset($EVENTS)}
 <h2>Angemeldete Events</h2>
 <table>
 <tr>
@@ -45,3 +48,4 @@
 {/strip}
 {/foreach}
 </table>
+{/if}
