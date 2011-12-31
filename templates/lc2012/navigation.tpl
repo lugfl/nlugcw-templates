@@ -30,7 +30,7 @@
 {if $role_admin}
     <div id="admin-nav">
 		{* Pagetype dependant navigation items.. *}
-		{if $pagetypeid == 1} {* Text/HTML *}
+		{if $pagetypeid == $PAGETYPE_TEXT_HTML} {* Text/HTML *}
 			<ul>
 				<li><a href="javascript:editor_show();">[Seite bearbeiten]</a></li>
 				<li><a href="javascript:page_create_show();">[Seite erstellen]</a></li>
