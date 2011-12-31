@@ -27,7 +27,7 @@
 	{/if}
 </div>
 
-{if $role_admin_sry_but_i_hate_hard_coded_database_ids}
+{if $role_admin}
     <div id="admin-nav">
 		{* Pagetype dependant navigation items.. *}
 		{if $pagetypeid == 1} {* Text/HTML *}
