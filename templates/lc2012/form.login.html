@@ -13,19 +13,36 @@
 Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden Sie sich an den Webmaster.
 </p>
 
-		{elseif $login_block eq 'newpw'}
+		{elseif $login_block eq 'newpwform'}
+			<h2>Passwort vergessen?</h2>
+			<p>
+				Kein Problem. Gebe hier Deinen Benutzernamen und die Email-Adresse an, die Du bei der Registrierung verwendet hast.
+				Dir wird dann ein neues Passwort generiert und an die Adresse geschickt.
+			</p>
+			<p>
+				Solltest Du auch diese Daten verlegt haben, k&ouml;nnen wir Dir leider nicht automatisiert weiterhelfen. Setze Dich 
+				in diesem Fall bitte mit uns in Verbindung.
+			</p>
+
+			<h2>Neues Passwort anfordern</h2>
 			<form method="POST" action="{$SCRIPT_NAME}">
 			<input type="hidden" name="p" value="{$loginpage}"/>
-			<input type="hidden" name="newpw" value="2" />
+			<input type="hidden" name="m" value="newpw" />
 			<dl>
 			    <dt>Benutzername:</dt>
-			    <dd><input type="text" name="user" value="" /></dd>
+			    <dd><input type="text" name="auth_user" value="" /></dd>
 			    <dt>E-Mail Adresse:</dt>
-			    <dd><input type="text" name="email" value="" /></dd>
+			    <dd><input type="text" name="auth_email" value="" /></dd>
 			</dl>
-			<input type="submit" value="OK" />
+			{if isset($err_user_not_found) and $err_user_not_found}
+			<p class="error">
+				Dein Account wurde mit den angegebenen Daten nicht gefunden.
+			</p>
+			{/if}
+			<input type="submit" value="Bitte schickt mir ein neues Passwort zu." />
 			</form>
-
+		{elseif $login_block eq 'newpwconfirm'}
+			<p>Das neue Passwort wurde per EMail verschickt.</p>
 		{elseif $login_block eq 'newform'}
 		
 			<form method="POST" action="{$SCRIPT_NAME}">
@@ -74,10 +91,9 @@ Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden 
 						<dd><input id="auth_form_pass" type="password" name="auth_pass"/></dd>
 					</dl>
 					<input type="submit" value="Login"/>
-					<p><a href="?p={$loginpage}&m=newpw">Passwort vergessen?</a></p>
+					<p><a href="?p={$loginpage}&m=newpwform">Passwort vergessen?</a></p>
 					<p><a href="?p={$loginpage}&m=newform">Neuen Account anlegen?</a></p>
 				</form>
 		{/if}
 	{/if}
-
 </div>
