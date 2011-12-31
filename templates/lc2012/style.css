@@ -75,6 +75,28 @@ body
   text-weight: bolder;
 }
 
+#mycamp_rechnung_personen tr th, #mycamp_rechnung_personen tr td
+{
+	min-width: 80px;
+	padding: 2px 10px;
+}
+#mycamp_rechnung_anmeldung
+{
+	border-collapse: collapse;	
+}
+#mycamp_rechnung_anmeldung tr th, #mycamp_rechnung_anmeldung tr td
+{
+	min-width: 180px;
+	text-align: left;
+	border: 0;
+	padding: 3px 5px;
+}
+#mycamp_rechnung_events tr th, #mycamp_rechnung_events tr td
+{
+	min-width: 80px;
+	padding: 2px 10px;
+}
+
 #content
 {
   display: inline-block;
@@ -224,4 +246,8 @@ h3
 {
 	font-size: 12pt;
 	color: #685e9c;
+}
+.align_right
+{
+	text-align: right;
 }

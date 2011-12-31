@@ -1,6 +1,6 @@
 {if isset($ANMELDUNG)}
 <h2>Anmeldedaten</h2>
-<table>
+<table id="mycamp_rechnung_anmeldung">
 <tr>
 	<th>Vorname</th><td>{$ANMELDUNG.vorname}</td>
 </tr>
@@ -35,7 +35,7 @@
 
 {if isset($EVENTS)}
 <h2>Angemeldete Events</h2>
-<table>
+<table id="mycamp_rechnung_events">
 <tr>
 	<th>Event</th><th>Kosten</th>
 </tr>
@@ -43,7 +43,7 @@
 {strip}
 <tr>
 	<td>{$EVENT.name}</td>
-	<td>{$EVENT.charge}</td>
+	<td style="text-align:right">{$EVENT.charge|string_format:'%.2f'} &euro;</td>
 </tr>
 {/strip}
 {/foreach}
