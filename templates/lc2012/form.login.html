@@ -1,7 +1,10 @@
 {* Smarty *}
 
+{if isset($username)}
+<h1>Profileinstellungen von {$username}</h1>
+{else}
 <h1>Login</h1>
-
+{/if}
 <div id="authbox">
 
 	{if $auth_ok}
@@ -38,8 +41,8 @@
 			<h2>Passwort&auml;nderung</h2>
 			<p>Die Passwort&auml;nderung wurde durchgef&uuml;hrt und ist ab sofort wirksam.</p>
 		{else}
-			<p>Sie sind bereits angemeldet.</p>
-			<p>Hier k&ouml;nnen Sie sich <a href="?p={$loginpage}&logout=1">abmelden</a> oder das Passwort <a href="?p={$loginpage}&m=chpwform">&auml;ndern</a>.</p>
+			<p>Du bist bereits angemeldet.</p>
+			<p>Hier kannst Du Dich <a href="?p={$loginpage}&logout=1">abmelden</a> oder das Passwort <a href="?p={$loginpage}&m=chpwform">&auml;ndern</a>.</p>
 
 
 		{/if} {* End of isset login_block *}
@@ -119,7 +122,7 @@ Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden 
 		</p>
 		{elseif $login_block eq 'confirmed'}
 		<p>
-			Ihre Accountbest&auml;titung wurde durchgef&uuml;rt. Sie k&ouml;nnen sich jetzt anmelden.
+			Deine Accountbest&auml;titung wurde durchgef&uuml;rt. Du kannst sich jetzt anmelden.
 		</p>
 		{else}
 				<form action="{$SCRIPT_NAME}?" method="post">
