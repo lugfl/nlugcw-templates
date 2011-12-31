@@ -5,9 +5,48 @@
 <div id="authbox">
 
 	{if $auth_ok}
-		<p>Sie sind bereits angemeldet.</p>
-		<p>Hier k&ouml;nnen Sie sich <a href="?p={$loginpage}&logout=1">abmelden</a>.</p>
-	{else}
+
+
+		{if !isset($login_block)}
+			<p class="error">Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden Sie sich an den Webmaster.	</p>
+		{elseif $login_block eq 'chpwform'}
+
+			<h2>Passwort&auml;nderung</h2>
+			<form method="POST" action="{$SCRIPT_NAME}">
+			<input type="hidden" name="p" value="{$loginpage}"/>
+			<input type="hidden" name="m" value="chpw" />
+			{if isset($err_auth) and $err_auth}
+				<p class="error">Das aktuelle Passwort ist nicht korrekt angegeben worden</p>
+			{/if}
+			<dl>
+
+				<dt><label for-id="anmeldung_form_passwort">Aktuelles Passwort*</label></dt>
+				<dd><input id="anmeldung_form_passwort" type="password" name="auth_pass" size="15" value="" /></dd>
+
+				<dt><label for-id="anmeldung_form_passwort">Neues Passwort*</label></dt>
+				<dd><input id="anmeldung_form_passwort" type="password" name="auth_newpass" size="15" value="" /></dd>
+
+				<dt><label for-id="anmeldung_form_passwort2">Neues Passwort wiederholen*</label></dt>
+				<dd><input id="anmeldung_form_passwort2" type="password" name="auth_pass2" size="15" value="" />
+					{if isset($err_auth_pass)}<p class="error">{$err_auth_pass}</p>{/if}
+				</dd>
+
+			</dl>
+			<input type="submit" value="Passwort &auml;ndern" />
+			</form>
+		{elseif $login_block eq 'chpwconfirm'}
+			<h2>Passwort&auml;nderung</h2>
+			<p>Die Passwort&auml;nderung wurde durchgef&uuml;hrt und ist ab sofort wirksam.</p>
+		{else}
+			<p>Sie sind bereits angemeldet.</p>
+			<p>Hier k&ouml;nnen Sie sich <a href="?p={$loginpage}&logout=1">abmelden</a> oder das Passwort <a href="?p={$loginpage}&m=chpwform">&auml;ndern</a>.</p>
+
+
+		{/if} {* End of isset login_block *}
+
+
+	{else}  {* else of if auth_ok block *}
+
 		{if !isset($login_block)}
 <p class="error">
 Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden Sie sich an den Webmaster.
@@ -41,8 +80,11 @@ Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden 
 			{/if}
 			<input type="submit" value="Bitte schickt mir ein neues Passwort zu." />
 			</form>
+
 		{elseif $login_block eq 'newpwconfirm'}
+
 			<p>Das neue Passwort wurde per EMail verschickt.</p>
+
 		{elseif $login_block eq 'newform'}
 		
 			<form method="POST" action="{$SCRIPT_NAME}">
