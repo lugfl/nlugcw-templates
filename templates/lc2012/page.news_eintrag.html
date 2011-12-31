@@ -3,6 +3,7 @@
 <div id="page">
 	{include file="./banner.tpl"}
 
+	<div id="nav">
 	{include file="./navigation.tpl"}
 
 	{if $role_admin}
@@ -13,6 +14,7 @@
 			</ul>
 		</div>
 	{/if}
+	</div>
 
 	<div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
 		<div id="news_eintrag">
