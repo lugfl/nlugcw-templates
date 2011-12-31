@@ -1,14 +1,20 @@
 <table>
 <tr><th>Event</th><th>Kosten</th><th>Bezahlstatus</th><th>Details</th></tr>
-{foreach $EVENTS as $EVENT}
-{strip}
-<tr>
-	<td>{$EVENT.eventname}</td>
-	<td style="text-align:right">{$EVENT.eventkosten} &euro;</td>
-	<td>{if $EVENT.bezahlt eq 1}Bezahlt{else}Offen{/if}</td>
-	<td><a href="?p={$PAGEID}&anmeldung={$EVENT.anmeldungid}">mehr...</a></td>
-</tr>
-{/strip}
+{foreach $PERSONEN as $PERSON}
+	<tr>
+	<td colspan="3"><b>{$PERSON.vorname} {$PERSON.nachname}</b></td>	
+	<td><a href="?p={$PAGEID}&anmeldung={$PERSON.anmeldungid}">mehr...</a></td>
+	</tr>
+	{foreach $PERSON.EVENTS as $EVENT}
+	{strip}
+	<tr>
+		<td>{$EVENT.eventname}</td>
+		<td style="text-align:right">{$EVENT.eventkosten} &euro;</td>
+		<td>{if $EVENT.bezahlt eq 1}Bezahlt{else}Offen{/if}</td>
+		<td></td>
+	</tr>
+	{/strip}
+	{/foreach}
 {/foreach}
 </table>
 
