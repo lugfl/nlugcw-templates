@@ -3,18 +3,7 @@
 <div id="page">
 	{include file="./banner.tpl"}
 
-	<div id="nav">
 	{include file="./navigation.tpl"}
-
-	{if $role_admin}
-		<div id="admin-nav">
-			<ul>
-				<li><a href="javascript:editor_show();">[News bearbeiten]</a></li>
-				<li><a href="javascript:news_delete_show();">[News löschen]</a></li>
-			</ul>
-		</div>
-	{/if}
-	</div>
 
 	<div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
 		<div id="news_eintrag">

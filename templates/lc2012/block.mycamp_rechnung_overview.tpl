@@ -12,6 +12,7 @@
 {/foreach}
 </table>
 
+{* TODO implement in january :)
 <table>
 <tr><th>Artikel</th><th>Gr&ouml;&szlig;e</th><th>Anzahl</th><th>Gesamtpreis</th><th>Bezahlstatus</th></tr>
 {foreach $ARTIKEL as $ART}
@@ -26,3 +27,4 @@
 {/strip}
 {/foreach}
 </table>
+*}
