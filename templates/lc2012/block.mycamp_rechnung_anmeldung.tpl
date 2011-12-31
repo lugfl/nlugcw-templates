@@ -43,7 +43,7 @@
 {strip}
 <tr>
 	<td>{$EVENT.name}</td>
-	<td style="text-align:right">{$EVENT.charge|string_format:'%.2f'} &euro;</td>
+	<td class="align_right">{$EVENT.charge|string_format:'%.2f'} &euro;</td>
 </tr>
 {/strip}
 {/foreach}
