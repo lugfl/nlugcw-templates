@@ -6,6 +6,7 @@
 	<td colspan="3"><b>{$PERSON.vorname} {$PERSON.nachname}</b></td>	
 	<td><a href="?p={$PAGEID}&anmeldung={$PERSON.anmeldungid}">mehr...</a></td>
 	</tr>
+	{if isset($PERSON.EVENTS)}
 	{foreach $PERSON.EVENTS as $EVENT}
 	{strip}
 	<tr>
@@ -16,6 +17,7 @@
 	</tr>
 	{/strip}
 	{/foreach}
+	{/if}
 {/foreach}
 </table>
 
