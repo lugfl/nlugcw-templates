@@ -28,7 +28,7 @@
 	<th>Anreise</th><td>{$ANMELDUNG.anreise}</td>
 </tr>
 <tr>
-	<th>Bemerkung</th><td>{$ANMELDUNG.bemerkung}</td>
+	<th>Bemerkung</th><td>{$ANMELDUNG.bemerkung|default:''}</td>
 </tr>
 </table>
 {/if}
