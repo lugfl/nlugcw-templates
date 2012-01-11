@@ -6,6 +6,7 @@
   <tr>
 		<th>Vorname</th>
 		<th>Nachname</th>
+		<th>Account</th>
 		<th>Stra&szlig;e</th>
 		<th>PLZ/Ort</th>
 		<th>EMail</th>
@@ -16,6 +17,7 @@
 	<tr>
 		<td>{$itm.vorname}</td>
 		<td>{$itm.nachname}</td>
+		<td><a href="?p=mcrech&accountid={$itm.accountid}">{$itm.username}</a></td>
 		<td>{$itm.strasse}</td>
 		<td>{$itm.plz} {$itm.ort}</td>
 		<td>{if isset($itm.email)}<a href="mailto:{$itm.email}">{$itm.email}</a>{/if}</td>
