@@ -18,6 +18,8 @@
 		{include file='./block.events_admin_selector.tpl'}
 	{elseif $events_block eq 'events_admin_list_registrations'}
 		{include file='./block.events_admin_list_registrations.tpl'}
+	{elseif $events_block eq 'events_admin_registration_comments'}
+		{include file='./block.events_admin_registration_comments.tpl'}
 	{else}
 <!-- Block: {$events_block|default:'unknown'} -->
 	{/if}

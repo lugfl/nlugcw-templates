@@ -1,5 +1,5 @@
 
-<h1>Anmeldung {$event_title|default:''}</h1>
+<h1>Eventauswahl {$event_title|default:''}</h1>
 <p>
 Bitte w&auml;hlen Sie das Event aus, f&uuml;r welches die aktuellen Registrierungen angezeigt werden sollen.
 </p>
@@ -10,7 +10,9 @@ Bitte w&auml;hlen Sie das Event aus, f&uuml;r welches die aktuellen Registrierun
 				{if isset($events_list)}
 				<select name="eventid">
 				{foreach $events_list as $event}
-						<option value="{$event.eventid}">{$event.name|default:''} {if isset($event.charge)} ({$event.charge|string_format:'%.2f'} &euro;){/if}
+						<option value="{$event.eventid}"
+						{if isset($selected_eventid) and $selected_eventid eq $event.eventid} selected="selected"{/if}
+						>{$event.name|default:''} {if isset($event.charge)} ({$event.charge|string_format:'%.2f'} &euro;){/if}
 						(Tln: {$event.curregistrations}/{$event.quota})
 						</option>
 				{/foreach}
