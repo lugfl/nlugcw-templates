@@ -14,6 +14,10 @@
 		{include file='./block.events_form.tpl'}
 	{elseif $events_block eq 'events_registration_successfull'}
 		{include file='./block.events_registration_successfull.tpl'}
+	{elseif $events_block eq 'events_admin_selector'}
+		{include file='./block.events_admin_selector.tpl'}
+	{elseif $events_block eq 'events_admin_list_registrations'}
+		{include file='./block.events_admin_list_registrations.tpl'}
 	{else}
 <!-- Block: {$events_block|default:'unknown'} -->
 	{/if}
