@@ -11,7 +11,7 @@ Bitte w&auml;hlen Sie das Event aus, f&uuml;r welches die aktuellen Registrierun
 				<select name="eventid">
 				{foreach $events_list as $event}
 						<option value="{$event.eventid}">{$event.name|default:''} {if isset($event.charge)} ({$event.charge|string_format:'%.2f'} &euro;){/if}
-						{if $event.quota <= $event.curregistrations}(ACHTUNG: Veranstaltung ausgebucht!!!){/if}
+						(Tln: {$event.curregistrations}/{$event.quota})
 						</option>
 				{/foreach}
 				</select>
