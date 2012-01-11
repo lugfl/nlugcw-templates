@@ -30,6 +30,11 @@
 	{if $role_admin}
 		<div id="admin-nav">
 			<ul>
+				{if isset($ADMINNAVI)}
+					{foreach from=$ADMINNAVI item=itm}
+					<li><a href="{$itm.url}">{$itm.title}</a></li>
+					{/foreach}
+				{/if}
 <!--				<li><a href="javascript:page_rename();">[Seite umbennen]</a></li>
 				<li><a href="javascript:page_move();">[Seite verschieben]</a></li> -->
 				{* Pagetype dependant navigation items.. *}
