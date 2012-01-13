@@ -35,18 +35,6 @@
 					<li><a href="{$itm.url}">{$itm.title}</a></li>
 					{/foreach}
 				{/if}
-<!--				<li><a href="javascript:page_rename();">[Seite umbennen]</a></li>
-				<li><a href="javascript:page_move();">[Seite verschieben]</a></li> -->
-				{* Pagetype dependant navigation items.. *}
-				{if $pagetypeid == $PAGETYPE_TEXT_HTML} {* Text/HTML *}
-				<li><a href="javascript:editor_show();">[Seite bearbeiten]</a></li>
-<!--				<li><a href="javascript:page_create_show();">[Seite erstellen]</a></li>
-				<li><a href="javascript:page_delete_show();">[Seite löschen]</a></li>-->
-				{elseif $pagetypeid == $PAGETYPE_PLUGIN_NEWS} {* Plugin/News *}
-				<li><a href="javascript:news_create_show();">[News schreiben]</a></li>
-				<li><a href="javascript:editor_show();">[News bearbeiten]</a></li>
-				<li><a href="javascript:news_delete_show();">[News löschen]</a></li>
-				{/if}
 			</ul>
 			{* Include the page editor here when we are in admin role.. * }
 			{* The editor template takes care itself if it is in editmode or not.. *}
