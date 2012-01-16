@@ -5,10 +5,13 @@
 	{include file="./navigation.tpl"}
 
 	<div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
+		{if isset($ERROR)}
+			<div class="error">{$ERROR}</div>
+		{/if}
 		{$CONTENT}
 	</div>
 
-	{if $SPONSOREN}
+	{if isset($SPONSOREN)}
 	<div id="sponsoren">{$SPONSOREN}</div>
 	{/if}
 </div>
