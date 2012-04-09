@@ -1,0 +1,80 @@
+{include file="./header.tpl"}
+
+<div id="page">
+	{include file="./banner.tpl"}
+
+	{include file="./navigation.tpl"}
+
+
+	<div id="content" {if $SPONSOREN}class="with_sponsor"{/if}>
+		<h1>Fan-Artikel</h1>
+		<div>
+			Zum Bestellen einfach beim Artikel in der betreffenden Anzahl auf den Bestelllink klicken. Eine Bestellung ist nur m&ouml;glich, wenn Du bereits registriert bist.
+		</div>
+		{foreach $ARTIKELLISTE as $ARTIKEL}
+		{strip}
+		<div id="news_eintrag">
+			<h2>{$ARTIKEL.name}</h2>
+			<dl>
+				<dt>Preis:</dt>
+				<dd>{$ARTIKEL.preis} &euro;</dd>
+
+				{if isset($ARTIKEL.pic) }
+				<dt>Vorschau:</dt>
+				<dd>{$ARTIKEL.pic}</dd>
+				{/if}
+
+				{if isset($ARTIKEL.beschreibung)}
+				<dt>Beschreibung:</dt>
+				<dd>{$ARTIKEL.beschreibung}</dd>
+				{/if}
+
+				<dt>Verf&uuml;gbare Gr&ouml;ssen:</dt>
+				<dd>
+					{foreach $ARTIKEL.groessen as $S}
+					<a href="?p={$PAGEID}&m=kaufe&artikelid={$ARTIKEL.artikelid}&groesse={$S}" title="In den Warenkorb legen">{$S}</a> 
+					{/foreach}
+				</dd>
+			</dl>
+		</div>
+		{/strip}
+		{/foreach}
+
+
+		{if isset($BASKET)}
+			<h2>Warenkorb</h2>
+			<table width="100%">
+				<tr>
+					<th>Artikel>
+					<th>Gr&ouml;sse</th>
+					<th>Anzahl</th>
+					<th>Preis</th>
+					<th width="30"></th>
+				</tr>
+				{foreach $BASKET as $ITEM}
+				<tr>
+					<td>{$ITEM.artikel.name}</td>
+					<td>{$ITEM.groesse}</td>
+					<td>{$ITEM.anzahl}</td>
+					<td>{$ITEM.preis} &euro;</td>
+					<td><a href="?p={$PAGEID}&artikelid={$ITEM.artikel.artikelid}&groesse={$ITEM.groesse}&m=del&t={$T}">-</a></td>
+				</tr>
+				{/foreach}
+				{if isset($BASKET_preis) }
+				<tr>
+					<td colspan="3">Gesamtpreis:</td>
+					<td>{$BASKET_preis} &euro;</td>
+					<td></td>
+				</tr>
+				{/if}
+			</table>
+		{/if}
+	</div>
+
+	{if $SPONSOREN}
+	<div id="sponsoren">{$SPONSOREN}</div>
+	{/if}
+</div>
+{include file="./footer.tpl"}
+
+
