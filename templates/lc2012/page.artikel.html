@@ -45,7 +45,7 @@
 			<h2>Warenkorb</h2>
 			<table width="100%">
 				<tr>
-					<th>Artikel>
+					<th>Artikel</th>
 					<th>Gr&ouml;sse</th>
 					<th>Anzahl</th>
 					<th>Preis</th>
@@ -68,6 +68,13 @@
 				</tr>
 				{/if}
 			</table>
+			{if $role_user}
+				<form action="?" method="POST">
+					<input type="hidden" name="p" value="{$PAGEID}"/>
+					<input type="hidden" name="m" value="commit"/>
+					<input type="submit" value="Bestellung abschicken"/>
+				</form>
+			{/if}
 		{/if}
 	</div>
 
