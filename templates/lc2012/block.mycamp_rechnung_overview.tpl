@@ -12,7 +12,7 @@
 	<tr>
 		<td>{$EVENT.eventname}</td>
 		<td style="text-align:right">{$EVENT.eventkosten|string_format:'%.2f'} &euro;</td>
-		<td>{if $EVENT.bezahlt eq 1}Bezahlt{else}Offen{/if}</td>
+		<td>{if isset($EVENT.bezahlt)}Bezahlt{else}<b>Offen</b>{/if}</td>
 		<td></td>
 	</tr>
 	{/strip}
