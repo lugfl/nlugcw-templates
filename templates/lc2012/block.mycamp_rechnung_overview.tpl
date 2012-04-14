@@ -1,5 +1,5 @@
 <h2>Meine Anmeldungen</h2>
-<table id="mycamp_rechnung_personen">
+<table id="mycamp_rechnung_personen" width="100%">
 <tr><th>Event</th><th>Kosten</th><th>Bezahlstatus</th><th>Details</th></tr>
 {foreach $PERSONEN as $PERSON}
 	<tr>
@@ -21,8 +21,9 @@
 {/foreach}
 </table>
 
-{* TODO implement in january :)
-<table>
+{if isset($ARTIKEL)}
+<h2>Meine Bestellungen</h2>
+<table width="100%">
 <tr><th>Artikel</th><th>Gr&ouml;&szlig;e</th><th>Anzahl</th><th>Gesamtpreis</th><th>Bezahlstatus</th></tr>
 {foreach $ARTIKEL as $ART}
 {strip}
@@ -31,9 +32,10 @@
 	<td>{$ART.groesse}</td>
 	<td>{$ART.anzahl}</td>
 	<td class="align_right">{$ART.kosten|string_format:'%.2f'} &euro;</td>
-	<td>{if $ART.bezahlt eq 1}Bezahlt{else}Offen{/if}</td>
+	<td>{if isset($ART.bezahlt)}Bezahlt{else}<b>Offen</b>{/if}</td>
 </tr>
 {/strip}
 {/foreach}
 </table>
-*}
+
+{/if}
