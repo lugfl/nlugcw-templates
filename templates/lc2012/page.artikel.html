@@ -74,7 +74,17 @@
 					<input type="hidden" name="m" value="commit"/>
 					<input type="submit" value="Bestellung abschicken"/>
 				</form>
+			{else}
+				<p>
+					Damit die Bestellung bearbeitet werden kann, musst Du registrierter Benutzer sein.
+				</p>
 			{/if}
+		{/if}
+		{if isset($COMMITED) and $COMMITED}
+			<p>
+				Vielen Dank f&uuml;r Deine Bestellung. Bitte &uuml;berweise den Betrag auf unser Konto. Den Bezahlstatus kannst Du
+				unter MyCamp im Bereich Rechnungen einsehen.
+			</p>
 		{/if}
 	</div>
 
