@@ -16,8 +16,8 @@
     <link rev="start" title="Startseite" href="./index.php?p=start">
     <link rev="bookmark" title="www.lugfl.de" href="http://www.lugfl.de">
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Crete+Round&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Crete+Round&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
   	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/reset.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/base.css">
@@ -25,10 +25,10 @@
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/layout.css">
 
 	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 	<script type="text/javascript" src="/templates/{$TEMPLATE_STYLE}/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 	<link rel="stylesheet" type="text/css" href="/templates/{$TEMPLATE_STYLE}/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 	<script type="text/javascript">
