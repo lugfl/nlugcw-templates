@@ -1,0 +1,16 @@
+{extends file="./layout.tpl"}
+
+{block name=content}
+	{foreach $NEWSLISTE as $NEWS}
+	{strip}
+	<div id="news_eintrag">
+		<h2><a href="?p={$PAGEID}&news={$NEWS.eintragid}">{$NEWS.title}</a></h2>
+		{if $role_admin}
+			<p class="small"><a href="javascript:news_editor_show({$NEWS.eintragid})">[News bearbeiten]</a></p>
+		{/if}
+		<p>{$NEWS.short}<br><a href="?p={$PAGEID}&news={$NEWS.eintragid}">[mehr...]</a></p>
+		<p class="small">Geschrieben am {$NEWS.date} von {$NEWS.author}</p>
+	</div>
+	{/strip}
+	{/foreach}
+{/block}

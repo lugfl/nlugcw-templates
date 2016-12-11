@@ -1,0 +1,13 @@
+{extends file="./layout.tpl"}
+
+{block name=content}
+	{if isset($rechnung_block)}
+		{if $rechnung_block eq 'overview'}
+			{include file="./block.mycamp_rechnung_overview.tpl"}
+		{elseif $rechnung_block eq 'anmeldung'}
+			{include file="./block.mycamp_rechnung_anmeldung.tpl"}
+		{/if}
+	{else}
+		<p class="error">Die Erweiterung Rechnung ist noch vollst&auml;ndig installiert.</p>
+	{/if}
+{/block}

@@ -1,0 +1,8 @@
+{extends file="./layout.tpl"}
+
+{block name=content}
+	{if isset($ERROR)}
+		<div class="error">{$ERROR}</div>
+	{/if}
+	{$CONTENT}
+{/block}

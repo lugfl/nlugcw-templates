@@ -1,0 +1,144 @@
+{* Smarty *}
+
+{if isset($username)}
+<h1>Profileinstellungen von {$username}</h1>
+{else}
+<h1>Login</h1>
+{/if}
+<div id="authbox">
+
+	{if $auth_ok}
+
+
+		{if !isset($login_block)}
+			<p class="error">Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden Sie sich an den Webmaster.	</p>
+		{elseif $login_block eq 'chpwform'}
+
+			<h2>Passwort&auml;nderung</h2>
+			<form method="POST" action="{$SCRIPT_NAME}">
+			<input type="hidden" name="p" value="{$loginpage}"/>
+			<input type="hidden" name="m" value="chpw" />
+			{if isset($err_auth) and $err_auth}
+				<p class="error">Das aktuelle Passwort ist nicht korrekt angegeben worden</p>
+			{/if}
+			<dl>
+
+				<dt><label for-id="anmeldung_form_passwort">Aktuelles Passwort*</label></dt>
+				<dd><input id="anmeldung_form_passwort" type="password" name="auth_pass" size="15" value="" /></dd>
+
+				<dt><label for-id="anmeldung_form_passwort">Neues Passwort*</label></dt>
+				<dd><input id="anmeldung_form_passwort" type="password" name="auth_newpass" size="15" value="" /></dd>
+
+				<dt><label for-id="anmeldung_form_passwort2">Neues Passwort wiederholen*</label></dt>
+				<dd><input id="anmeldung_form_passwort2" type="password" name="auth_pass2" size="15" value="" />
+					{if isset($err_auth_pass)}<p class="error">{$err_auth_pass}</p>{/if}
+				</dd>
+
+			</dl>
+			<input type="submit" value="Passwort &auml;ndern" />
+			</form>
+		{elseif $login_block eq 'chpwconfirm'}
+			<h2>Passwort&auml;nderung</h2>
+			<p>Die Passwort&auml;nderung wurde durchgef&uuml;hrt und ist ab sofort wirksam.</p>
+		{else}
+			<p>Du bist bereits angemeldet.</p>
+			<p>Hier kannst Du Dich <a href="?p={$loginpage}&logout=1">abmelden</a> oder das Passwort <a href="?p={$loginpage}&m=chpwform">&auml;ndern</a>.</p>
+
+
+		{/if} {* End of isset login_block *}
+
+
+	{else}  {* else of if auth_ok block *}
+
+		{if !isset($login_block)}
+<p class="error">
+Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden Sie sich an den Webmaster.
+</p>
+
+		{elseif $login_block eq 'newpwform'}
+			<h2>Passwort vergessen?</h2>
+			<p>
+				Kein Problem. Gebe hier Deinen Benutzernamen und die Email-Adresse an, die Du bei der Registrierung verwendet hast.
+				Dir wird dann ein neues Passwort generiert und an die Adresse geschickt.
+			</p>
+			<p>
+				Solltest Du auch diese Daten verlegt haben, k&ouml;nnen wir Dir leider nicht automatisiert weiterhelfen. Setze Dich 
+				in diesem Fall bitte mit uns in Verbindung.
+			</p>
+
+			<h2>Neues Passwort anfordern</h2>
+			<form method="POST" action="{$SCRIPT_NAME}">
+			<input type="hidden" name="p" value="{$loginpage}"/>
+			<input type="hidden" name="m" value="newpw" />
+			<dl>
+			    <dt>Benutzername:</dt>
+			    <dd><input type="text" name="auth_user" value="" /></dd>
+			    <dt>E-Mail Adresse:</dt>
+			    <dd><input type="text" name="auth_email" value="" /></dd>
+			</dl>
+			{if isset($err_user_not_found) and $err_user_not_found}
+			<p class="error">
+				Dein Account wurde mit den angegebenen Daten nicht gefunden.
+			</p>
+			{/if}
+			<input type="submit" value="Bitte schickt mir ein neues Passwort zu." />
+			</form>
+
+		{elseif $login_block eq 'newpwconfirm'}
+
+			<p>Das neue Passwort wurde per EMail verschickt.</p>
+
+		{elseif $login_block eq 'newform'}
+		
+			<form method="POST" action="{$SCRIPT_NAME}">
+			<input type="hidden" name="p" value="{$loginpage}"/>
+			<input type="hidden" name="m" value="new" />
+			<dl>
+
+				<dt><label for-id="anmeldung_form_nickname">Account-/Nickname*</label></dt>
+				<dd><input id="anmeldung_form_nickname" type="text" name="auth_user" value="{$auth_user|default:''}" />
+					{if isset($err_auth_user)}<p class="error">{$err_auth_user}</p>{/if}
+				</dd>
+
+				<dt><label for-id="anmeldung_form_passwort">Accountpasswort*</label></dt>
+				<dd><input id="anmeldung_form_passwort" type="password" name="auth_pass" size="15" value="" /></dd>
+
+				<dt><label for-id="anmeldung_form_passwort2">Passwort wiederholen*</label></dt>
+				<dd><input id="anmeldung_form_passwort2" type="password" name="auth_pass2" size="15" value="" />
+					{if isset($err_auth_pass)}<p class="error">{$err_auth_pass}</p>{/if}
+				</dd>
+
+				<dt><label for-id="anmeldung_form_email">E-Mail*</label></dt>
+				<dd><input id="anmeldung_form_email" type="text" name="auth_email" size="30" value="{$auth_email|default:''}" />
+					{if isset($err_auth_email)}<p class="error">{$err_auth_email}</p>{/if}
+				</dd>
+			</dl>
+			<input type="submit" value="Registrieren" />
+			</form>
+		{elseif $login_block eq 'confirmmailsend'}
+		<p>
+			Der Account wurde angelegt. Du bekommst in K&uuml;rze eine EMail mit einem Best&auml;tigungslink.
+			Dein Zugang zu dieser Seite funktioniert erst, wenn Du den Best&auml;tigungslink einmal angeklickt hast.
+		</p>
+		{elseif $login_block eq 'confirmed'}
+		<p>
+			Deine Accountbest&auml;titung wurde durchgef&uuml;rt. Du kannst sich jetzt anmelden.
+		</p>
+		{else}
+				<form action="{$SCRIPT_NAME}?" method="post">
+					<input type="hidden" name="p" value="{$loginpage}"/>
+					<input type="hidden" name="m" value="login" />
+					<dl>
+						<dt><label for-id="auth_form_user">Benutzername:</label></dt>
+						<dd><input id="auth_form_user" type="text" name="auth_user"/></dd>
+						
+						<dt><label for-id="auth_form_pass">Passwort:</label></dt>
+						<dd><input id="auth_form_pass" type="password" name="auth_pass"/></dd>
+					</dl>
+					<input type="submit" value="Login"/>
+					<p><a href="?p={$loginpage}&m=newpwform">Passwort vergessen?</a></p>
+					<p><a href="?p={$loginpage}&m=newform">Neuen Account anlegen?</a></p>
+				</form>
+		{/if}
+	{/if}
+</div>

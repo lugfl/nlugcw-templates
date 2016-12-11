@@ -1,0 +1,83 @@
+{extends file="./layout.tpl"}
+
+{block name=content}
+	<h1>Fan-Artikel</h1>
+	<div>
+		Zum Bestellen einfach beim Artikel in der betreffenden Anzahl auf den Bestelllink klicken. Eine Bestellung ist nur m&ouml;glich, wenn Du bereits registriert bist.
+	</div>
+	{foreach $ARTIKELLISTE as $ARTIKEL}
+	{strip}
+	<div id="news_eintrag">
+		<h2>{$ARTIKEL.name}</h2>
+		<dl>
+			<dt>Preis:</dt>
+			<dd>{$ARTIKEL.preis} &euro;</dd>
+
+			{if isset($ARTIKEL.pic) }
+			<dt>Vorschau:</dt>
+			<dd>{$ARTIKEL.pic}</dd>
+			{/if}
+
+			{if isset($ARTIKEL.beschreibung)}
+			<dt>Beschreibung:</dt>
+			<dd>{$ARTIKEL.beschreibung}</dd>
+			{/if}
+
+			<dt>Verf&uuml;gbare Gr&ouml;ssen:</dt>
+			<dd>
+				{foreach $ARTIKEL.groessen as $S}
+				<a href="?p={$PAGEID}&m=kaufe&artikelid={$ARTIKEL.artikelid}&groesse={$S}" title="In den Warenkorb legen">{$S}</a> 
+				{/foreach}
+			</dd>
+		</dl>
+	</div>
+	{/strip}
+	{/foreach}
+
+
+	{if isset($BASKET)}
+		<h2>Warenkorb</h2>
+		<table width="100%">
+			<tr>
+				<th>Artikel</th>
+				<th>Gr&ouml;sse</th>
+				<th>Anzahl</th>
+				<th>Preis</th>
+				<th width="30"></th>
+			</tr>
+			{foreach $BASKET as $ITEM}
+			<tr>
+				<td>{$ITEM.artikel.name}</td>
+				<td>{$ITEM.groesse}</td>
+				<td>{$ITEM.anzahl}</td>
+				<td>{$ITEM.preis} &euro;</td>
+				<td><a href="?p={$PAGEID}&artikelid={$ITEM.artikel.artikelid}&groesse={$ITEM.groesse}&m=del&t={$T}">-</a></td>
+			</tr>
+			{/foreach}
+			{if isset($BASKET_preis) }
+			<tr>
+				<td colspan="3">Gesamtpreis:</td>
+				<td>{$BASKET_preis} &euro;</td>
+				<td></td>
+			</tr>
+			{/if}
+		</table>
+		{if $role_user}
+			<form action="?" method="POST">
+				<input type="hidden" name="p" value="{$PAGEID}"/>
+				<input type="hidden" name="m" value="commit"/>
+				<input type="submit" value="Bestellung abschicken"/>
+			</form>
+		{else}
+			<p>
+				Damit die Bestellung bearbeitet werden kann, musst Du registrierter Benutzer sein.
+			</p>
+		{/if}
+	{/if}
+	{if isset($COMMITED) and $COMMITED}
+		<p>
+			Vielen Dank f&uuml;r Deine Bestellung. Bitte &uuml;berweise den Betrag auf unser Konto. Den Bezahlstatus kannst Du
+			unter MyCamp im Bereich Rechnungen einsehen.
+		</p>
+	{/if}
+{/block}
