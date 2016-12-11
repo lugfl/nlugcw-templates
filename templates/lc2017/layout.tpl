@@ -11,7 +11,7 @@
 
     <link rev="copyright" title="Impressum" href="./index.php?p=impressum">
     <link rev="start" title="Startseite" href="./index.php?p=start">
-    <link rev="bookmark" title="www.lugfl.de" href="http://www.lugfl.de">
+    <link rev="bookmark" title="LUG Camp 2017" href="https://www.lug-camp-2017.de">
 
   	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/reset.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/style.css">
