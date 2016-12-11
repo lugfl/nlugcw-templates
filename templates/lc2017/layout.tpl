@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="de"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="de"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="de"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="de"> <!--<![endif]-->
+<html lang="de">
 <head>
 	<meta charset="utf-8">
     <title>{$TITLE|default:"no title"}</title>
@@ -23,10 +20,6 @@
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/base.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/skeleton.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/layout.css">
-
-	<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 	<script type="text/javascript" src="/templates/{$TEMPLATE_STYLE}/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
