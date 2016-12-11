@@ -13,11 +13,8 @@
     <link rev="start" title="Startseite" href="./index.php?p=start">
     <link rev="bookmark" title="www.lugfl.de" href="http://www.lugfl.de">
 
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-	<link href='//fonts.googleapis.com/css?family=Crete+Round&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
   	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/reset.css">
-	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/base.css">
+	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/style.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/skeleton.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/layout.css">
 
