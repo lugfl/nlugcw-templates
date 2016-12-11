@@ -21,9 +21,9 @@
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/skeleton.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/layout.css">
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-	<script type="text/javascript" src="/templates/{$TEMPLATE_STYLE}/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-	<link rel="stylesheet" type="text/css" href="/templates/{$TEMPLATE_STYLE}/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+	<script src="/templates/{$TEMPLATE_STYLE}/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/templates/{$TEMPLATE_STYLE}/js/fancybox/jquery.fancybox.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="/templates/{$TEMPLATE_STYLE}/js/fancybox/jquery.fancybox.css" media="screen" />
 	<script type="text/javascript">
 {literal}
 		$(document).ready(function() {
