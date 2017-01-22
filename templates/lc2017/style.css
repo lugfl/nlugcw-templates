@@ -133,7 +133,12 @@ header h4 {
 ul.mainMenu {
     float: right;
     margin: 0;
-    padding: 0;
+	position: relative;
+	display: inline-table;
+	padding: 0px;
+}
+u.mainMenul:after {
+	content: ""; clear: both; display: block;
 }
 ul.mainMenu li {
     display: inline;
@@ -145,6 +150,7 @@ ul.mainMenu li a {
     font-size: 13px;
     text-decoration: none;
 }
+
 ul.mainMenu li a:hover {
     -moz-transition: color .12s ease-in-out;
     -ms-transition: color .12s ease-in-out;
@@ -152,6 +158,32 @@ ul.mainMenu li a:hover {
     -webkit-transition: color .12s ease-in-out;
     color: #FF6A00;
     transition: color .12s ease-in-out;
+}
+
+ul.mainMenu ul {
+	display: none;
+	background: rgba(255, 106, 0, 0.7);
+	position: absolute;
+	top: 100%;
+	padding: 5px 0px;
+	margin-top: 0px;
+}
+
+ul.mainMenu li:hover > ul {
+	display: block;
+}
+ul.mainMenu ul li {
+	float: none;
+	display:block;
+	position: relative;
+	padding:3px;
+}
+ul.mainMenu ul li a {
+	padding: 10px;
+	color: #fff;
+}
+ul.mainMenu ul li a:hover {
+    color: #444;
 }
 .orange {
     background: #ff6a00;

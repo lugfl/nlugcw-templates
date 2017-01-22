@@ -5,13 +5,16 @@
 <ul class='mainMenu'>
 
 	{foreach from=$NAVI item=itm}
-		<li><a href="{$itm.url}" title="{$itm.title}"
-			{if $itm.active}
-				class="active"
-				{assign var=SUBNAVI value=$itm.subitems}
-			{/if}
-			>{$itm.title}</a></li>
+		<li><a href="{$itm.url}" title="{$itm.title}"{if $itm.active}class="active"{/if}>{$itm.title}</a>
+		{if $itm.subitems}
+		<ul>
+			{foreach from=$itm.subitems item=subitm}
+			<li><a href="{$subitm.url}" title="{$subitm.title}"{if $subitm.active}class="active"{/if}>{$subitm.title}</a>
 			{/foreach}
+		</ul>
+		{/if}
+		</li>
+	{/foreach}
 
 	{if $role_admin}
 		<div id="admin-nav">
