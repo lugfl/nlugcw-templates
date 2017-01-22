@@ -13,7 +13,7 @@
     <link rev="start" title="Startseite" href="./index.php?p=start">
     <link rev="bookmark" title="LUG Camp 2017" href="https://www.lug-camp-2017.de">
 
-  	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/reset.css">
+	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/reset.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/style.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/skeleton.css">
 	<link rel="stylesheet" href="/templates/{$TEMPLATE_STYLE}/css/layout.css">
@@ -27,7 +27,7 @@
 				$("a[rel=example_group]").fancybox({
 				'transitionIn'		: 'none',
 				'transitionOut'		: 'none',
-				'titlePosition' 	: 'over',
+				'titlePosition'		: 'over',
 				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
 					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
 				}
@@ -95,9 +95,9 @@
         });
 
          toper.click(function(){
-        	$('html, body').animate({scrollTop:0}, 500);	        	
-        	return false;
-    	}); 
+		$('html, body').animate({scrollTop:0}, 500);
+		return false;
+	});
 	</script>
 {/literal}
 
