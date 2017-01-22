@@ -17,7 +17,7 @@
 	{/foreach}
 
 	{if $role_admin}
-		<div id="admin-nav">
+		<li><a href="#" title="Admin navigation">Admin Menu</a>
 			<ul>
 				{if isset($ADMINNAVI)}
 					{foreach from=$ADMINNAVI item=itm}
@@ -25,10 +25,10 @@
 					{/foreach}
 				{/if}
 			</ul>
-			{* Include the page editor here when we are in admin role.. * }
-			{* The editor template takes care itself if it is in editmode or not.. *}
-			{include file="../page_editor.tpl"}
-		</div>
+		</li>
+		{* Include the page editor here when we are in admin role.. * }
+		{* The editor template takes care itself if it is in editmode or not.. *}
+		{include file="../page_editor.tpl"}
 	{/if}
 
 </ul>
