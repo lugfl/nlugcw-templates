@@ -247,25 +247,25 @@ form {
 }
 input,
 label,
+select,
 textarea {
     float: left;
     margin: 0;
     padding: 0;
     width: 500px;
 }
-label {
+label, legend {
     font-size: 12px;
     font-weight: 300;
     margin-bottom: 7px;
     text-transform: uppercase;
 }
-input {
+input, button, select{
     margin-bottom: 20px;
     padding: 7px 0;
     text-align: center;
 }
-input,
-textarea {
+input, button, textarea, select {
     border: 1px solid #ddd;
     outline: none;
 }
@@ -281,7 +281,7 @@ input.error,
 textarea.error {
     border-color: #cc4847;
 }
-input[type=submit] {
+input[type=submit], button {
     background: #eee;
     border: none;
     color: #aaa;
@@ -290,9 +290,20 @@ input[type=submit] {
     padding: 12px 0;
     width: 502px;
 }
-input[type=submit]:hover {
+input[type=submit]:hover, button:hover {
     background: #1EBA6B;
     color: #fff;
+}
+input[type=radio], input[type=checkbox] {
+	margin: 5px;
+	width: 20px;
+	float: none;
+}
+input[type=radio] ~ label, input[type=checkbox] ~ label{
+	float:none;
+	width:470px;
+	text-align: left;
+	display: inline-block;
 }
 .focus h3 {
     margin-bottom: 15px;
