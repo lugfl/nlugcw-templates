@@ -66,10 +66,9 @@ body .clear {
     text-align: center;
 }
 header {
-    background: url(../images/misc/banner.jpg) no-repeat center -1px fixed;
     clear: both;
     float: left;
-    height: 400px;
+    height: 200px;
     margin: 0;
     padding: 0;
     position: relative;
