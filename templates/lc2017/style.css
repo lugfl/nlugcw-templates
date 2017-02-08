@@ -299,7 +299,7 @@ input[type=radio], input[type=checkbox] {
 }
 input[type=radio] ~ label, input[type=checkbox] ~ label{
 	float:none;
-	width:470px;
+	width:465px;
 	text-align: left;
 	display: inline-block;
 }
@@ -401,6 +401,15 @@ footer .social a img {
 }
 footer .social a:hover img {
     opacity: 1;
+}
+form div.bdate {
+	width: 500px;
+}
+form div.doubleform {
+	width: 500px;
+}
+form div.doubleform input, form div.doubleform select, form div.doubleform label{
+	width: 49%;
 }
 @media only screen and max-width 767px and min-width 480px {
     header h2 {
