@@ -2,14 +2,14 @@
 
 {block name=content}
 <div class="container single">
-	<h1>Fan-Artikel</h1>
-	<div>
+	<h2>Fan-Artikel</h2>
+	<p>
 		Zum Bestellen einfach beim Artikel in der betreffenden Anzahl auf den Bestelllink klicken. Eine Bestellung ist nur m&ouml;glich, wenn Du bereits registriert bist.
-	</div>
+	</p>
 	{foreach $ARTIKELLISTE as $ARTIKEL}
 	{strip}
 	<div id="news_eintrag">
-		<h2>{$ARTIKEL.name}</h2>
+		<h3>{$ARTIKEL.name}</h3>
 		<dl>
 			<dt>Preis:</dt>
 			<dd>{$ARTIKEL.preis} &euro;</dd>
@@ -37,7 +37,7 @@
 
 
 	{if isset($BASKET)}
-		<h2>Warenkorb</h2>
+		<h3>Warenkorb</h3>
 		<table width="100%">
 			<tr>
 				<th>Artikel</th>

@@ -1,5 +1,4 @@
-
-<h1>Eventauswahl {$event_title|default:''}</h1>
+<h2>Eventauswahl {$event_title|default:''}</h2>
 <p>
 Bitte w&auml;hlen Sie das Event aus, f&uuml;r welches die aktuellen Registrierungen angezeigt werden sollen.
 </p>

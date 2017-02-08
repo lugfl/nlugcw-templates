@@ -1,5 +1,4 @@
-
-<h1>Anmeldung {$event_title|default:''}</h1>
+<h2>Anmeldung {$event_title|default:''}</h2>
 <p>
 Um euch die Anmeldung etwas zu erleichtern, k&ouml;nnt ihr mit einem Login mehrere Personen anmelden. Das ist praktisch z.B. f&uuml;r Familien. Alle Buchungen werden f&uuml;r euch dann unter diesem einen Login zusammen gefasst und ihr bekommt auch nur eine Gesamtrechnung.
 </p>

@@ -1,4 +1,4 @@
-<h1>Anmeldungen {if isset($events_data.name)} f&uuml;r &quot;{$events_data.name}&quot;{/if}</h1>
+<h2>Anmeldungen {if isset($events_data.name)} f&uuml;r &quot;{$events_data.name}&quot;{/if}</h2>
 
 {if isset($events_registrations)}
 <table width="100%">

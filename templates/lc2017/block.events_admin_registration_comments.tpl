@@ -1,4 +1,4 @@
-<h1>Kommentare {if isset($events_data.name)} f&uuml;r &quot;{$events_data.name}&quot;{/if}</h1>
+<h2>Kommentare {if isset($events_data.name)} f&uuml;r &quot;{$events_data.name}&quot;{/if}</h2>
 
 <div>
 {foreach $events_registration_comments as $c}
