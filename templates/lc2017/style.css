@@ -433,7 +433,7 @@ table.vertical th {
 	text-align: right;
 }
 
-@media only screen and max-width 767px and min-width 480px {
+@media only screen and (max-width: 767px) and (min-width: 480px) {
     header h2 {
         display: none;
     }
@@ -447,6 +447,10 @@ table.vertical th {
     .orange p {
         width: 400px;
     }
+    .logo img {
+		width: 10px;
+		height: auto;
+	}
     form,
     label,
     input {
@@ -455,26 +459,68 @@ table.vertical th {
     input[type=submit] {
         width: 402px;
     }
-    textarea {
+    textarea, form div.doubleform, form div.bdate {
         width: 380px;
     }
     .container .one-third.column,
-    .container .eight.columns,
-    .container .four.columns {
+    .container .eight.columns {
         margin-bottom: 40px;
     }
+	ul.mainMenu {
+		float: none;
+	}
+    ul.mainMenu::before {
+		display: block;
+		font-size: 2em;
+		content: "\2630 Menu";
+		padding: 5px;
+	}
+    ul.mainMenu li {
+		float: none;
+		display: none;
+	}
+    ul.mainMenu:hover li {
+		display: block;
+	}
+    ul.mainMenu li a {
+		font-size: 1.3em;
+		line-height: 1.4em;
+	}
+	ul.mainMenu ul {
+		background: none;
+		position: relative;
+	}
+	ul.mainMenu ul li {
+		float: none;
+		display: block;
+		position: relative;
+		padding: 3px;
+	}
+	ul.mainMenu ul li a {
+		color: black;
+	}
+	input[type=radio], input[type=checkbox] {
+		margin: 2px;
+		width: 15px;
+	}
+	input[type=radio] ~ label, input[type=checkbox] ~ label{
+		width: 370px;
+	}
 }
-@media only screen and max-width 767px {
+@media only screen and (max-width: 767px) {
     header {
-        height: 310px;
+        height: 100px;
     }
     header h2,
-    header .six.columns {
+    header .four.columns {
         display: none;
     }
     header .slogan {
         padding: 30px 0;
     }
+    ul.mainMenu {
+		margin: 0;
+	}
     nav .container .logo {
         margin-bottom: 20px;
         text-align: center;
@@ -490,12 +536,51 @@ table.vertical th {
     input[type=submit] {
         width: 302px;
     }
-    textarea {
+    textarea, form div.doubleform, form div.bdate {
         width: 280px;
     }
     .container .one-third.column,
-    .container .eight.columns,
-    .container .four.columns {
+    .container .eight.columns {
         margin-bottom: 40px;
     }
+    ul.mainMenu {
+		float: none;
+	}
+    ul.mainMenu::before {
+		display: block;
+		font-size: 2em;
+		content: "\2630 Menu";
+		padding: 5px;
+	}
+    ul.mainMenu li {
+		float: none;
+		display: none;
+	}
+    ul.mainMenu:hover li {
+		display: block;
+	}
+    ul.mainMenu li a {
+		font-size: 1.3em;
+		line-height: 1.4em;
+	}
+	ul.mainMenu ul {
+		background: none;
+		position: relative;
+	}
+	ul.mainMenu ul li {
+		float: none;
+		display: block;
+		position: relative;
+		padding: 3px;
+	}
+	ul.mainMenu ul li a {
+		color: black;
+	}
+	input[type=radio], input[type=checkbox] {
+		margin: 2px;
+		width: 15px;
+	}
+	input[type=radio] ~ label, input[type=checkbox] ~ label{
+		width: 270px;
+	}
 }

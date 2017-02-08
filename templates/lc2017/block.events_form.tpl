@@ -49,7 +49,7 @@ Um euch die Anmeldung etwas zu erleichtern, k&ouml;nnt ihr mit einem Login mehre
 				<div class="bdate">
 					<input id="geb_d" type="text" name="geb_d" value="{$geb_d|default:''}" size="2" maxlength="2" style="width:25%">
 					<input id="geb_m" type="text" name="geb_m" value="{$geb_m|default:''}" size="2" maxlength="2" style="width:25%">
-					<input id="geb_y" type="text" name="geb_y" value="{$geb_y|default:''}" size="4" maxlength="4" style="width:49%">
+					<input id="geb_y" type="text" name="geb_y" value="{$geb_y|default:''}" size="4" maxlength="4" style="width:48%">
 					{if isset($err_geb)} <p class="error">{$err_geb}</p> {/if}
 				</div>
 
