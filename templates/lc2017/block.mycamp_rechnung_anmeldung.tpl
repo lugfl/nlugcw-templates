@@ -1,6 +1,6 @@
 {if isset($ANMELDUNG)}
-<h2>Anmeldedaten</h2>
-<table id="mycamp_rechnung_anmeldung">
+<h3>Anmeldedaten</h3>
+<table id="mycamp_rechnung_anmeldung" class="vertical">
 <tr>
 	<th>Vorname</th><td>{$ANMELDUNG.vorname}</td>
 </tr>
@@ -34,7 +34,7 @@
 {/if}
 
 {if isset($EVENTS)}
-<h2>Angemeldete Events</h2>
+<h3>Angemeldete Events</h3>
 <table id="mycamp_rechnung_events">
 <tr>
 	<th>Event</th><th>Kosten</th>

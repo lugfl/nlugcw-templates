@@ -1,4 +1,4 @@
-<h2>Meine Anmeldungen</h2>
+<h3>Meine Anmeldungen</h3>
 <table id="mycamp_rechnung_personen" width="100%">
 <tr><th>Event</th><th>Kosten</th><th>Bezahlstatus</th><th>Details</th></tr>
 {foreach $PERSONEN as $PERSON}
@@ -22,7 +22,7 @@
 </table>
 
 {if isset($ARTIKEL)}
-<h2>Meine Bestellungen</h2>
+<h3>Meine Bestellungen</h3>
 <table width="100%">
 <tr><th>Artikel</th><th>Gr&ouml;&szlig;e</th><th>Anzahl</th><th>Gesamtpreis</th><th>Bezahlstatus</th></tr>
 {foreach $ARTIKEL as $ART}
