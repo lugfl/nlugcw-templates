@@ -195,7 +195,6 @@ ul.mainMenu ul li a:hover {
     position: relative;
     text-align: center;
     width: 100%;
-    z-index: 1;
 }
 .orange h2 {
     margin: 20px 0 50px;
@@ -234,7 +233,6 @@ ul.mainMenu ul li a:hover {
     padding: 45px 0;
     position: relative;
     width: 100%;
-    z-index: 1;
 }
 .form h3,
 .form p {
