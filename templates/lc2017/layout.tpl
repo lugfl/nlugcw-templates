@@ -40,10 +40,10 @@
 	<header>
 		<nav>
 			<div class='container'>
-				<div class='five columns logo'>
+				<div class='four columns logo'>
 					<a href='#'>CAMPLogo</a>
 				</div>
-				<div class='eleven columns'>
+				<div class='twelve columns'>
 					{include file="./navigation.tpl"}
 				</div>
 			</div>
