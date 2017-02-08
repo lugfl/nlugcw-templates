@@ -41,7 +41,7 @@
 		<nav>
 			<div class='container'>
 				<div class='four columns logo'>
-					<a href='#'>CAMPLogo</a>
+					<a href='/'><img src="/templates/{$TEMPLATE_STYLE}/artwork/logo.png"></a>
 				</div>
 				<div class='twelve columns'>
 					{include file="./navigation.tpl"}
