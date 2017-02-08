@@ -50,9 +50,7 @@
 		</nav>
 	</header>
 
-	<div class='container'>
-		{block name=content}{/block}
-	</div>
+	{block name=content}{/block}
 
 	{if $SPONSOREN}
 		<div class='container'>
