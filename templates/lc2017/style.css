@@ -241,6 +241,9 @@ ul.mainMenu ul li a:hover {
     position: relative;
     width: 100%;
 }
+div.single {
+	min-height: 500px;
+}
 .form h3,
 .form p {
     text-align: center;

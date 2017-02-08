@@ -1,6 +1,7 @@
 {extends file="./layout.tpl"}
 
 {block name=content}
+<div class="container single">
 	{if isset($rechnung_block)}
 		{if $rechnung_block eq 'overview'}
 			{include file="./block.mycamp_rechnung_overview.tpl"}
@@ -10,4 +11,5 @@
 	{else}
 		<p class="error">Die Erweiterung Rechnung ist noch vollst&auml;ndig installiert.</p>
 	{/if}
+</div>
 {/block}
