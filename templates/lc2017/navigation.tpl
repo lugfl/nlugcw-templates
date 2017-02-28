@@ -27,9 +27,12 @@
 				{/if}
 			</ul>
 		</li>
-		{* Include the page editor here when we are in admin role.. * }
-		{* The editor template takes care itself if it is in editmode or not.. *}
-		{include file="page_editor.tpl"}
 	{/if}
 
 </ul>
+
+{if $role_admin}
+	{* Include the page editor here when we are in admin role.. * }
+	{* The editor template takes care itself if it is in editmode or not.. *}
+	{include file="page_editor.tpl"}
+{/if}
