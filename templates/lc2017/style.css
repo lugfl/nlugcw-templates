@@ -86,7 +86,7 @@ header nav {
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3);
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3);
     background: #fff;
-    border-top: 2px solid #FF6A00;
+    border-top: 2px solid #57c4ff;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .3);
     float: left;
     margin: 0;
@@ -101,8 +101,15 @@ header nav {
 	padding-top: 150px;
 	max-width: 1440px;
 	min-height: 230px;
-	background: url(artwork/slogan_background.jpg) no-repeat center 150px;
     color: #fff;
+	background: #57c4ff;
+	background: -moz-linear-gradient(-45deg, #57c4ff 0%, #57c4ff 15%, #66bc1b 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, #57c4ff), color-stop(15%, #57c4ff), color-stop(100%, #66bc1b));
+	background: -webkit-linear-gradient(-45deg, #57c4ff 0%, #57c4ff 15%, #66bc1b 100%);
+	background: -o-linear-gradient(-45deg, #57c4ff 0%, #57c4ff 15%, #66bc1b 100%);
+	background: -ms-linear-gradient(-45deg, #57c4ff 0%, #57c4ff 15%, #66bc1b 100%);
+	background: linear-gradient(135deg, #57c4ff 0%, #57c4ff 15%, #66bc1b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57c4ff', endColorstr='#66bc1b', GradientType=1 );
 }
 .slogan .columns {
 	padding: 10px 0;
@@ -122,8 +129,9 @@ header nav {
     float: left;
     font-weight: 600;
     text-align: left;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    text-shadow: 0 3px 3px rgba(0, 0, 0, .2);
     width: 100%;
+	padding: 0;
 }
 .slogan h1 {
     font-size: 3em;
@@ -142,7 +150,7 @@ header nav {
     text-decoration: none;
 }
 .logo a:hover {
-    color: #FF6A00;
+    color: #57c4ff;
 }
 ul.mainMenu {
     float: right;
@@ -170,13 +178,13 @@ ul.mainMenu li a:hover {
     -ms-transition: color .12s ease-in-out;
     -o-transition: color .12s ease-in-out;
     -webkit-transition: color .12s ease-in-out;
-    color: #FF6A00;
+    color: #57c4ff;
     transition: color .12s ease-in-out;
 }
 
 ul.mainMenu ul {
 	display: none;
-	background: rgba(255, 106, 0, 0.7);
+	background: rgba(87, 196, 255, 0.7);
 	position: absolute;
 	top: 100%;
 	padding: 5px 0px;
@@ -194,13 +202,13 @@ ul.mainMenu ul li {
 }
 ul.mainMenu ul li a {
 	padding: 10px;
-	color: #fff;
+	color: #222;
 }
 ul.mainMenu ul li a:hover {
-    color: #444;
+    color: #666;
 }
 .orange {
-    background: #ff6a00;
+    background: #67bc1b;
     clear: both;
     color: #fff;
     float: left;
@@ -210,10 +218,11 @@ ul.mainMenu ul li a:hover {
     text-align: center;
     width: 100%;
 }
-.orange h2 {
+.orange h2, .orange h3 {
     margin: 20px 0 50px;
+	padding: 0;
     text-align: center;
-    text-shadow: none;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .5);
     width: 100%;
 }
 .orange p {
@@ -225,7 +234,7 @@ ul.mainMenu ul li a:hover {
 .orange a.dalej {
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
-    background: #df4a00;
+    background: #67bc1b;
     border-radius: 30px;
     color: #fff;
     display: block;
@@ -237,7 +246,7 @@ ul.mainMenu ul li a:hover {
 }
 .orange a.dalej:hover {
     background: #fff;
-    color: #ff6a00;
+    color: #67bc1b;
 }
 .gray {
     background: #f6f6f6;
@@ -344,7 +353,7 @@ input[type=radio] ~ label, input[type=checkbox] ~ label{
     height: 95px;
 }
 a#top {
-    background: #ff6a00;
+    background: #67bc1b;
     bottom: 50px;
     color: #fff;
     display: none;
@@ -406,7 +415,7 @@ footer a {
     color: #ddd;
 }
 footer a:hover {
-    color: #ff6a00;
+    color: #67bc1b;
 }
 footer .social a {
     float: left;
