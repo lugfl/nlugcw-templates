@@ -1,9 +1,14 @@
 {* Smarty *}
 
-{if isset($username)}
-<h2>Profileinstellungen von {$username}</h2>
+{if $role_admin}
+  <h2>Benutzerverwaltung</h2>
 {else}
-<h1>Login</h1>
+
+  {if isset($username)}
+    <h2>Profileinstellungen von {$username}</h2>
+  {else}
+    <h1>Login</h1>
+  {/if}
 {/if}
 <div id="authbox">
 
@@ -40,6 +45,30 @@
 		{elseif $login_block eq 'chpwconfirm'}
 			<h3>Passwort&auml;nderung</h3>
 			<p>Die Passwort&auml;nderung wurde durchgef&uuml;hrt und ist ab sofort wirksam.</p>
+		{elseif $login_block eq 'ualist'}
+			<h3>Liste der nicht verifizierten Accounts</h3>
+{if isset($ualist)}
+<table width="100%">
+<thead>
+  <tr>
+		<th>Erstellt</th>
+		<th>Benutzername</th>
+		<th>EMail</th>
+		<th>Aktion</th>
+	</tr>
+</thead>
+			{foreach $ualist as $itm}
+	<tr>
+		<td>{$itm.crdate}</td>
+		<td>{$itm.username}</td>
+		<td>{if isset($itm.email)}<a href="mailto:{$itm.email}">{$itm.email}</a>{/if}</td>
+		<td><a href="?p={$loginpage}&a=reval&u={$itm.username}"><abbr title="Revalidate">ReVal</abbr></a></td>
+	</tr>
+			{/foreach}
+</table>
+{else}
+<p>Es sind keine unverifizierten Accounts in de Datenbank</p>
+{/if}
 		{else}
 			<p>Du bist bereits angemeldet.</p>
 			<p>Hier kannst Du Dich <a href="?p={$loginpage}&logout=1">abmelden</a> oder das Passwort <a href="?p={$loginpage}&m=chpwform">&auml;ndern</a>.</p>
