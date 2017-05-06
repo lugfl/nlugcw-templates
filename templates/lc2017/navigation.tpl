@@ -8,11 +8,11 @@
 		<a>{$itm.title}</a>
 		<ul>
 			{foreach from=$itm.subitems item=subitm}
-			<li><a href="{$subitm.url}" title="{$subitm.title}"{if $subitm.active}class="active"{/if}>{$subitm.title}</a>
+			<li><a href="{$subitm.url}" title="{$subitm.title}"{if $subitm.active} class="active"{/if}>{$subitm.title}</a>
 			{/foreach}
 		</ul>
 		{else}
-			<a href="{$itm.url}" title="{$itm.title}"{if $itm.active}class="active"{/if}>{$itm.title}</a>
+			<a href="{$itm.url}" title="{$itm.title}"{if $itm.active} class="active"{/if}>{$itm.title}</a>
 		{/if}
 		</li>
 	{/foreach}

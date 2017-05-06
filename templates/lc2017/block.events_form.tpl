@@ -94,7 +94,7 @@ Um euch die Anmeldung etwas zu erleichtern, k&ouml;nnt ihr mit einem Login mehre
 				<h4>Anreise</h4>
 				{foreach $anreise_list as $a}
 					<input type="radio" name="anreise" id="anreise-{$a.anreiseid}" value="{$a.anreiseid}" {if isset($anreise) and $anreise eq $a.anreiseid}checked="checked"{/if}>
-					<label for="anreise-{$a.anreiseid}">{$a.name}</label></br/>
+					<label for="anreise-{$a.anreiseid}">{$a.name}</label><br/>
 				{/foreach}
 				{if isset($err_anreise)} <p class="error">{$err_anreise}</p> {/if}
 			</fieldset>
