@@ -4,33 +4,41 @@
 <div class="container single">
 	<h2>Fan-Artikel</h2>
 	<p>
-		Zum Bestellen einfach beim Artikel in der betreffenden Anzahl auf den Bestelllink klicken. Eine Bestellung ist nur m&ouml;glich, wenn Du bereits registriert bist.
+		Zum Bestellen einfach beim Artikel in der betreffenden Anzahl auf den Bestelllink klicken. Eine Bestellung ist nur m&ouml;glich, wenn Du bereits registriert bist. Der Warenkorb befindet sich am Ende der Seite.
 	</p>
 	{foreach $ARTIKELLISTE as $ARTIKEL}
 	{strip}
 	<div id="news_eintrag">
 		<h3>{$ARTIKEL.name}</h3>
-		<dl>
-			<dt>Preis:</dt>
-			<dd>{$ARTIKEL.preis} &euro;</dd>
+		<table width="100%">
+			<tr>
+				<th width="40%">Preis:</th>
+				<td width="60%">{$ARTIKEL.preis} &euro;</td>
+			</tr>
 
 			{if isset($ARTIKEL.pic) }
-			<dt>Vorschau:</dt>
-			<dd>{$ARTIKEL.pic}</dd>
+			<tr>
+				<th>Vorschau:</th>
+				<td>{$ARTIKEL.pic}</td>
+			</tr>
 			{/if}
 
 			{if isset($ARTIKEL.beschreibung)}
-			<dt>Beschreibung:</dt>
-			<dd>{$ARTIKEL.beschreibung}</dd>
+			<tr>
+				<th>Beschreibung:</th>
+				<td>{$ARTIKEL.beschreibung}</td>
+			</tr>
 			{/if}
 
-			<dt>Verf&uuml;gbare Gr&ouml;ssen:</dt>
-			<dd>
+			<tr>
+				<th>Verf&uuml;gbare Gr&ouml;ssen:</th>
+				<td>
 				{foreach $ARTIKEL.groessen as $S}
-				<a href="?p={$PAGEID}&m=kaufe&artikelid={$ARTIKEL.artikelid}&groesse={$S}" title="In den Warenkorb legen">{$S}</a> 
+				<a href="?p={$PAGEID}&m=kaufe&artikelid={$ARTIKEL.artikelid}&groesse={$S}" title="In den Warenkorb legen"><u>{$S}</u></a>,  
 				{/foreach}
-			</dd>
-		</dl>
+				</td>
+			</tr>
+		</table>
 	</div>
 	{/strip}
 	{/foreach}
@@ -44,7 +52,7 @@
 				<th>Gr&ouml;sse</th>
 				<th>Anzahl</th>
 				<th>Preis</th>
-				<th width="30"></th>
+				<th width="30">L&ouml;schen</th>
 			</tr>
 			{foreach $BASKET as $ITEM}
 			<tr>
