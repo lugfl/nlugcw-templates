@@ -166,7 +166,9 @@ Die Installation der Login-Erweiterung ist nicht vollst&auml;ndig. Bitte wenden 
 					</dl>
 					<input type="submit" value="Login"/>
 					<p><a href="?p={$loginpage}&m=newpwform">Passwort vergessen?</a></p>
+					{if isset($ACCOUNTREGISTRATION_ENABLED) and $ACCOUNTREGISTRATION_ENABLED }
 					<p><a href="?p={$loginpage}&m=newform">Neuen Account anlegen?</a></p>
+					{/if}
 				</form>
 		{/if}
 	{/if}
